@@ -19,16 +19,28 @@ it("can submit form", () => {
 });
 
 // form validation
-// check
+// character limit
 
 // redirects to home page
-
 it("can redirect", () => {
   cy.visit("/");
   cy.get("form").find("input[name='user-name']").type("moos74");
   cy.get("form").find("input[name='message']").type("moos74");
   cy.get("form").find("input[type='submit']").click();
   cy.url().should("include", "/");
+});
+
+// check feed has increased 
+it("can add new moo-post", () => {
+  cy.visit("/");
+  cy.get("form").find("input[name='user-name']").type("moos74");
+  cy.get("form").find("input[name='message']").type("moos74");
+  cy.get("form").find("input[type='submit']").click();
+  cy.get("form").find("input[name='user-name']").type("moos75");
+  cy.get("form").find("input[name='message']").type("moos75");
+  cy.get("form").find("input[type='submit']").click();
+  cy.url().should("include", "/");
+  cy.get("ul").children().should("have.length",2);
 });
 
 // stretch - delete?
