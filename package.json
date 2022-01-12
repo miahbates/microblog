@@ -2,7 +2,7 @@
   "name": "microblogging-oli-orian-miah",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "server.js", 
   "scripts": {
     "test": "cypress open",
     "start": "node server.js",
