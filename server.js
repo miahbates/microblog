@@ -4,7 +4,6 @@ const server = express();
 
 // array of posts
 let postsArray = [{"user-name": "Orian", "message": "First Moo!"}, {"user-name": "Oli", "message": "Second Moo!"}];
-console.log(`Array ${postsArray.length}`);
 
 let cowPost = '';
 let cowPostList = '';
@@ -20,6 +19,9 @@ server.get("/", (request, response) => {
                 <p>Username: ${post["user-name"]}</p>
                 <p>Message: ${post["message"]}</p>
             </div>
+            <form action="/delete-posts" method="POST">
+              <button name="${post["user-name"]}" value="${post["message"]}">Delete me!</button>
+            </form>
         </li>`;
 
     cowPostList += cowPost;
@@ -61,6 +63,17 @@ const bodyParser = express.urlencoded();
 server.post("/", bodyParser, (request, response) => {
   cowPost = request.body;
   postsArray.push(cowPost);
+  response.redirect("/");
+});
+
+server.post("/delete-posts", bodyParser, (request, response) => {
+  const userName = Object.keys(request.body)[0];
+  const message = Object.values(request.body)[0];
+
+  // filter non matching post to remain
+  postsArray = postsArray.filter((post) =>
+    post["user-name"] !== userName && post["message"] !== message
+  );
   response.redirect("/");
 });
 
