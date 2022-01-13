@@ -78,5 +78,5 @@ it("can delete moo-post", () => {
 
 it("can link to css file", () => {
   cy.visit("/");
-  cy.get("h1").should("have.css", "color", "blue");
+  cy.get("h1").should("have.css", "color", "rgb(0, 0, 255)");
 });
