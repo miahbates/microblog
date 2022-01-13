@@ -91,5 +91,5 @@ it("can display 404 if page not found", () => {
 
 it("can link to css file on 404 page", () => {
   cy.visit({ url: "/not-real", failOnStatusCode: false });
-  cy.get("h1").should("have.css", "color", "rgb(128, 0, 128)");
+  cy.get("h1").should("have.css", "color", "rgba(255, 255, 255, 0.992)");
 });
