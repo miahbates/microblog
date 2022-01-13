@@ -6,8 +6,9 @@ server.use(staticHandler);
 
 // array of posts
 let postsArray = [
-  { "user-name": "Orian", message: "First Moo!", time: "13:20", date: "13/1/2022"},
-  { "user-name": "Oli", message: "Second Moo!", time: "13:22", date: "14/1/2022"},
+  { "user-name": "Miah", message: "Looking for some cows, can anyone help me?", time: "17:20", date: "13/1/2022"},
+  { "user-name": "Orian", message: "Moo too!", time: "16:45", date: "13/1/2022"},
+  { "user-name": "Oli", message: "First Moo!", time: "13:20", date: "13/1/2022"},
 ];
 
 let cowPost = "";
