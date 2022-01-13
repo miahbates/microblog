@@ -54,6 +54,10 @@ input {
   margin: 0.5rem;
 }
 
+input[type="submit"]:hover {
+  background-color: rgb(203, 255, 150);
+}
+
 #message {
-  height: 200px;
+  height: 100px;
 }
