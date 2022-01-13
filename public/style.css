@@ -1,3 +1,45 @@
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 h1 {
   color: blue;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  margin: 1rem;
+  padding: 1rem;
+  border: deeppink 1px solid;
+  list-style-type: none;
+}
+
+img {
+  max-height: 20vh;
+}
+
+button {
+  background-color: rgb(254, 85, 175);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+input {
+  margin: 0.5rem;
 }

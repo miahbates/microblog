@@ -20,11 +20,11 @@ server.get("/", (request, response) => {
   postsArray.forEach((post) => {
     cowPost = `<li>
             <div>
-                <p>Username: ${post["user-name"]}</p>
-                <p>Message: ${post["message"]}</p>
+                <p>🐮 Username: ${post["user-name"]}</p>
+                <p>🔔 Message: ${post["message"]} </p>
             </div>
             <form action="/delete-posts" method="POST">
-              <button name="${post["user-name"]}" value="${post["message"]}">Delete me!</button>
+              <button name="${post["user-name"]}" value="${post["message"]}">Delete me! 💩</button>
             </form>
         </li>`;
 
@@ -36,7 +36,7 @@ server.get("/", (request, response) => {
         <input required id="user-name" type="text" name="user-name" />
         <label for="message">Cow-post</label>
         <input required id="message" type="text" name="message" />
-        <input required value="send cow-post!" type="submit" />
+        <input required value="send cow-post! 🤠" type="submit" />
     </form>`;
 
   const html = `<!DOCTYPE html>
@@ -47,11 +47,16 @@ server.get("/", (request, response) => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Moo-Net</title>
         <link rel="stylesheet" type="text/css" href="/style.css" />
+        <link rel="icon" type="image/png" href="/moonet-logo.png" />
     </head>
     <body>
     <h1>Moo-net</h1>
-    ${form}
+    <img src="/moonet-logo.png">
+    <h2>A blog site like no udder!</h2>
+    <section>
+    ${form}</section>
     <ul>${cowPostList}</ul>
+    <footer>Support us!</footer>
     </body>
     </html>`;
 
