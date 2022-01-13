@@ -107,9 +107,6 @@ server.use((request, response) => {
   response.status(404).send(htmlError);
 });
 
-const PORT = 3000;
-server.listen(PORT, () => console.log(`listening on ${PORT}`));
-
 function getCurrDate() {
   const date = new Date();
   return `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
@@ -119,3 +116,6 @@ function getCurrTime() {
   const date = new Date();
   return `${date.getHours()}:${date.getMinutes()}`;
 }
+
+const PORT = process.env.PORT || 3000;
+server.listen(PORT, () => console.log(`listening on ${PORT}`));
