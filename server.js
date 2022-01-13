@@ -36,7 +36,7 @@ server.get("/", (request, response) => {
         <input required id="user-name" type="text" name="user-name" />
         <label for="message">Cow-post</label>
         <input required id="message" type="text" name="message" />
-        <input required value="send cow-post! 🤠" type="submit" />
+        <input required value="Send cow-post! 🤠" type="submit" />
     </form>`;
 
   const html = `<!DOCTYPE html>
@@ -51,7 +51,7 @@ server.get("/", (request, response) => {
     </head>
     <body>
     <h1>Moo-net</h1>
-    <img src="/moonet-logo.png">
+    <img src="/moonet-logo.png" alt="moon-net cow logo">
     <h2>A blog site like no udder!</h2>
     <section>
     ${form}</section>

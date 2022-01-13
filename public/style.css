@@ -3,6 +3,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: whitesmoke;
 }
 
 h1 {
@@ -16,15 +17,24 @@ ul {
 li {
   margin: 1rem;
   padding: 1rem;
-  border: deeppink 1px solid;
+  border: deeppink 2px solid;
+  box-shadow: 0.5px 1px 0.5px 0.5px deeppink;
   list-style-type: none;
+  background-color: white;
 }
 
 img {
+  height: 200px;
   max-height: 20vh;
 }
 
 button {
+  color: black;
+  background-color: white;
+}
+
+button:hover {
+  color: white;
   background-color: rgb(254, 85, 175);
 }
 
@@ -42,4 +52,8 @@ section {
 
 input {
   margin: 0.5rem;
+}
+
+#message {
+  height: 200px;
 }
