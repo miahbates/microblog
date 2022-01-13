@@ -26,6 +26,7 @@ li {
 img {
   height: 200px;
   max-height: 20vh;
+  animation: pulse 3s infinite;
 }
 
 button {
@@ -60,4 +61,18 @@ input[type="submit"]:hover {
 
 #message {
   height: 100px;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.7);
+  }
+
+  70% {
+    transform: scale(0.9);
+  }
+
+  100% {
+    transform: scale(0.7);
+  }
 }
