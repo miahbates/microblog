@@ -76,7 +76,18 @@ it("can delete moo-post", () => {
     });
 });
 
-it("can link to css file", () => {
+it("can link to css file on homepage", () => {
   cy.visit("/");
   cy.get("h1").should("have.css", "color", "rgb(0, 0, 255)");
+});
+
+it("can display 404 if page not found", () => {
+  cy.request({url: "/page-not-found", failOnStatusCode: false}).should((response) => {
+    expect(response.status).to.eq(404)
+  });
+})
+
+it("can link to css file on 404 page", () => {
+  cy.visit({url: "/not-real", failOnStatusCode: false});
+  cy.get("h1").should("have.css", "color", "rgb(128, 0, 128)");
 });

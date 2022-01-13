@@ -80,5 +80,24 @@ server.post("/delete-posts", bodyParser, (request, response) => {
   response.redirect("/");
 });
 
+server.use((request, response) => {
+  const htmlError =
+    `<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Moo-Net</title>
+        <link rel="stylesheet" type="text/css" href="/404.css" />
+    </head>
+    <body>
+    <h1>Moo! This page is not found</h1>
+    </body>
+    </html>`
+
+  response.status(404).send(htmlError);
+})
+
 const PORT = 3000;
 server.listen(PORT, () => console.log(`listening on ${PORT}`));
