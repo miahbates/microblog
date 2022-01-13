@@ -23,7 +23,7 @@ server.get("/", (request, response) => {
         </li>`;
 
     cowPostList += cowPost;
-    })
+  });
 
   const form = 
     `<form method="POST">
