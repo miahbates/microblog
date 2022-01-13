@@ -80,5 +80,9 @@ server.post("/delete-posts", bodyParser, (request, response) => {
   response.redirect("/");
 });
 
+server.use((request, response) => {
+  response.status(404).send('<h1>Page not found</h1>')
+})
+
 const PORT = 3000;
 server.listen(PORT, () => console.log(`listening on ${PORT}`));

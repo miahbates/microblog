@@ -82,7 +82,7 @@ it("can link to css file", () => {
 });
 
 it("can display 404 if page not found", () => {
-  cy.request({url: "/page-not-found"}).should((response) => {
-    expect(response.status).to.eq("404")
+  cy.request({url: "/page-not-found", failOnStatusCode: false}).should((response) => {
+    expect(response.status).to.eq(404)
   });
 })
