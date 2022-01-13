@@ -20,11 +20,15 @@ server.get("/", (request, response) => {
   postsArray.forEach((post) => {
     cowPost = `<li>
             <div>
+                <p> ${getCurrTime()} </p>
+                <p> ${getCurrDate()} </p>
                 <p>🐮 Username: ${post["user-name"]}</p>
                 <p>🔔 Message: ${post["message"]} </p>
             </div>
             <form action="/delete-posts" method="POST">
-              <button name="${post["user-name"]}" value="${post["message"]}">Delete me! 💩</button>
+              <button name="${post["user-name"]}" value="${
+      post["message"]
+    }">Delete me! 💩</button>
             </form>
         </li>`;
 
@@ -35,7 +39,7 @@ server.get("/", (request, response) => {
         <label for="user-name">Username</label>
         <input required id="user-name" type="text" name="user-name" />
         <label for="message">Cow-post</label>
-        <input required id="message" type="text" name="message" />
+        <textarea required id="message" type="text" name="message"></textarea>
         <input required value="Send cow-post! 🤠" type="submit" />
     </form>`;
 
@@ -70,7 +74,7 @@ const bodyParser = express.urlencoded();
 // add cowPost to the postsArray
 server.post("/", bodyParser, (request, response) => {
   cowPost = request.body;
-  postsArray.push(cowPost);
+  postsArray.unshift(cowPost);
   response.redirect("/");
 });
 
@@ -86,8 +90,7 @@ server.post("/delete-posts", bodyParser, (request, response) => {
 });
 
 server.use((request, response) => {
-  const htmlError =
-    `<!DOCTYPE html>
+  const htmlError = `<!DOCTYPE html>
     <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -99,10 +102,20 @@ server.use((request, response) => {
     <body>
     <h1>Moo! This page is not found</h1>
     </body>
-    </html>`
+    </html>`;
 
   response.status(404).send(htmlError);
-})
+});
 
 const PORT = 3000;
 server.listen(PORT, () => console.log(`listening on ${PORT}`));
+
+function getCurrDate() {
+  const date = new Date();
+  return `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
+}
+
+function getCurrTime() {
+  const date = new Date();
+  return `${date.getHours()}:${date.getMinutes()}`;
+}

@@ -1,3 +1,18 @@
+body {
+  background-image: url("/sadCow.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 h1 {
-    color: rgb(128, 0, 128);
+  color: rgba(255, 255, 255, 0.993);
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-color: rgb(212, 120, 136);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
