@@ -1,5 +1,4 @@
 // test for landing on homepage
-
 it("can find homepage", () => {
   cy.visit("/");
 });
@@ -32,7 +31,15 @@ it("can redirect", () => {
 
 // check feed has increased 
 it("can add new moo-post", () => {
+  let currentListLength = 0;
+
   cy.visit("/");
+  cy.get("body") 
+    .find("li") // array of li
+    .then(list => {
+      currentListLength = Cypress.$(list).length;
+    });
+
   cy.get("form").find("input[name='user-name']").type("moos74");
   cy.get("form").find("input[name='message']").type("moos74");
   cy.get("form").find("input[type='submit']").click();
@@ -40,7 +47,13 @@ it("can add new moo-post", () => {
   cy.get("form").find("input[name='message']").type("moos75");
   cy.get("form").find("input[type='submit']").click();
   cy.url().should("include", "/");
-  cy.get("ul").children().should("have.length",2);
+
+  cy.get("body")
+    .find("li")
+    .then(list => {
+      expect(list).to.have.length(currentListLength + 2); 
+    });
+  
 });
 
 // stretch - delete?
