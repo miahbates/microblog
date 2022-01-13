@@ -6,8 +6,8 @@ server.use(staticHandler);
 
 // array of posts
 let postsArray = [
-  { "user-name": "Orian", message: "First Moo!" },
-  { "user-name": "Oli", message: "Second Moo!" },
+  { "user-name": "Orian", message: "First Moo!", time: "13:20", date: "13/1/2022"},
+  { "user-name": "Oli", message: "Second Moo!", time: "13:22", date: "14/1/2022"},
 ];
 
 let cowPost = "";
@@ -20,8 +20,8 @@ server.get("/", (request, response) => {
   postsArray.forEach((post) => {
     cowPost = `<li>
             <div>
-                <p> ${getCurrTime()} </p>
-                <p> ${getCurrDate()} </p>
+                <p> ${post.time} </p>
+                <p> ${post.date} </p>
                 <p>🐮 Username: ${post["user-name"]}</p>
                 <p>🔔 Message: ${post["message"]} </p>
             </div>
@@ -74,6 +74,8 @@ const bodyParser = express.urlencoded();
 // add cowPost to the postsArray
 server.post("/", bodyParser, (request, response) => {
   cowPost = request.body;
+  cowPost.date = getCurrDate();
+  cowPost.time = getCurrTime();
   postsArray.unshift(cowPost);
   response.redirect("/");
 });
