@@ -13,7 +13,7 @@ it("can find title on home page", () => {
 it("can submit form", () => {
   cy.visit("/");
   cy.get("form").find("input[name='user-name']").type("mooUser54");
-  cy.get("form").find("input[name='message']").type("help me find my cows");
+  cy.get("form").find("textarea").type("help me find my cows");
   cy.get("form").find("input[type='submit']").click();
 });
 
@@ -24,7 +24,7 @@ it("can submit form", () => {
 it("can redirect", () => {
   cy.visit("/");
   cy.get("form").find("input[name='user-name']").type("milkman77");
-  cy.get("form").find("input[name='message']").type("call me postman pat");
+  cy.get("form").find("textarea").type("call me postman pat");
   cy.get("form").find("input[type='submit']").click();
   cy.url().should("include", "/");
 });
@@ -41,7 +41,7 @@ it("can add new moo-post", () => {
     });
 
   cy.get("form").find("input[name='user-name']").type("troll99");
-  cy.get("form").find("input[name='message']").type("I h8 cows");
+  cy.get("form").find("textarea").type("I h8 cows");
   cy.get("form").find("input[type='submit']").click();
   cy.url().should("include", "/");
 
@@ -82,12 +82,14 @@ it("can link to css file on homepage", () => {
 });
 
 it("can display 404 if page not found", () => {
-  cy.request({url: "/page-not-found", failOnStatusCode: false}).should((response) => {
-    expect(response.status).to.eq(404)
-  });
-})
+  cy.request({ url: "/page-not-found", failOnStatusCode: false }).should(
+    (response) => {
+      expect(response.status).to.eq(404);
+    }
+  );
+});
 
 it("can link to css file on 404 page", () => {
-  cy.visit({url: "/not-real", failOnStatusCode: false});
+  cy.visit({ url: "/not-real", failOnStatusCode: false });
   cy.get("h1").should("have.css", "color", "rgb(128, 0, 128)");
 });
