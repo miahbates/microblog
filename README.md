@@ -38,7 +38,6 @@ What we learn't
 
 ###
 Future improvements 
-* The BUG 🐞 - padding zero to be added to time (minutes under 10minutes) on each post.
 * Project modularisation.
 * A 'like button'.
 * Editing posts.
