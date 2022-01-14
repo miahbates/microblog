@@ -9,6 +9,7 @@ A microblogging website dedicated to cows.
 * Run command `npm install` in terminal.
 * Start sever run command `npm run dev`.
 * Run cypress testing run command `npm run test`.
+* Or can access locally on *[localhost:3000](http://localhost:3000/)*
 
 ## User Stories :busts_in_silhouette:
 ### Core ✨
