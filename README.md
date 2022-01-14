@@ -4,6 +4,11 @@ A microblogging website dedicated to cows.
 
 *[Deployed version here!](https://moo-net.herokuapp.com/)* 
 
+## Team members
+- Oli: Scrum master/Facilitator/UX and UI
+- Orian: DevOps
+- Miah: Quality Assurance 
+
 ## How to install 
 * Git clone `https://github.com/fac-23/microblogging-oli-orian-miah.git`
 * Run command `npm install` in terminal.
