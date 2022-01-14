@@ -73,11 +73,11 @@ const bodyParser = express.urlencoded();
 
 // create new cowPost from user post
 // add cowPost to the postsArray
-server.post("/", bodyParser, (request, response) => {
-  cowPost = request.body;
-  cowPost.date = getCurrDate();
-  cowPost.time = getCurrTime();
-  postsArray.unshift(cowPost);
+server.post("/", bodyParser, (request, response) => { let cowPostObj = Object.assign({}, request.body);
+  cowPostObj.message.replace(/>/g, "&lt;");
+  cowPostObj.date = getCurrDate();
+  cowPostObj.time = getCurrTime();
+  postsArray.unshift(cowPostObj);
   response.redirect("/");
 });
 
