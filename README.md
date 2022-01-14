@@ -4,6 +4,12 @@ A microblogging website dedicated to cows.
 
 *[Deployed version here!](https://moo-net.herokuapp.com/)* 
 
+## How to install 
+* Git clone `https://github.com/fac-23/microblogging-oli-orian-miah.git`.
+* Run command `npm install` in terminal.
+* Start sever run command `npm run dev`.
+* Run cypress testing run command `npm run test`.
+
 ## User Stories :busts_in_silhouette:
 ### Core ✨
 - [X] As an opinionated person, I want to: post my thoughts so others can read them
@@ -19,4 +25,21 @@ Acceptance Criteria
 - [X] A responsive, mobile-first design
 - [X] Ensure your app is accessible to as many different users as possible
 
+###
+What we learn't
+* TDD with cypress.
+* How to set up an express server.
+* Using date object. 
+* Project set-up, installing package.JSON and running scripts. 
+* Deployment Heroku.
+* Managing GET and POST requests on express.
+* Adding a 'catch all' for missing routes to generate a custom 404 page.
+* Use of github project board. 
+
+###
+Future improvements 
+* The BUG 🐞 - padding zero to be added to time (minutes under 10minutes) on each post.
+* Project modularisation.
+* A 'like button'.
+* Editing posts.
 
