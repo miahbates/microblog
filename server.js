@@ -6,9 +6,9 @@ server.use(staticHandler);
 
 // array of posts
 let postsArray = [
-  { "user-name": "Miah", message: "Looking for some cows, can anyone help me?", time: "17:20", date: "13/1/2022"},
-  { "user-name": "Orian", message: "Moo too!", time: "16:45", date: "13/1/2022"},
-  { "user-name": "Oli", message: "First Moo!", time: "13:20", date: "13/1/2022"},
+  { "user-name": "Miah", message: "Looking for some cows, can anyone help me?", time: "17:20", date: "13/01/2022"},
+  { "user-name": "Orian", message: "Moo too!", time: "16:45", date: "13/01/2022"},
+  { "user-name": "Oli", message: "First Moo!", time: "13:20", date: "13/01/2022"},
 ];
 
 let cowPost = "";
@@ -112,12 +112,12 @@ server.use((request, response) => {
 
 function getCurrDate() {
   const date = new Date();
-  return `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
+  return date.toLocaleString('en-GB', {year: "numeric", month: "2-digit", day: "2-digit"});
 }
 
 function getCurrTime() {
   const date = new Date();
-  return `${date.getHours()}:${date.getMinutes()}`;
+  return date.toLocaleString("en-GB", {hour: "2-digit", minute: "2-digit"});
 }
 
 const PORT = process.env.PORT || 3000;
