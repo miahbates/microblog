@@ -1,6 +1,6 @@
 # Moo-Net 🐮
-A Microblogging project.
 
+A microblogging website dedicated to cows.
 
 *[Deployed version here!](https://moo-net.herokuapp.com/)* 
 
