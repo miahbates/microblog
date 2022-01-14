@@ -84,10 +84,17 @@ server.post("/delete-posts", bodyParser, (request, response) => {
   const userName = Object.keys(request.body)[0];
   const message = Object.values(request.body)[0];
 
-  // filter non matching post to remain
-  postsArray = postsArray.filter(
-    (post) => post["user-name"] !== userName && post["message"] !== message
-  );
+  postsArray = postsArray.filter((post) => {
+    // get all the users messages that are not equal to the current user name
+    if (post["user-name"] === userName && post["message"] !== message) {
+      return post;
+    }
+    // return all messages that do not have the same user 
+    if (post["user-name"] !== userName) {
+      return post;
+    }
+  });
+  
   response.redirect("/");
 });
 
