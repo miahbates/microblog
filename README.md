@@ -5,7 +5,7 @@ A microblogging website dedicated to cows.
 *[Deployed version here!](https://moo-net.herokuapp.com/)* 
 
 ## How to install 
-* Git clone `https://github.com/fac-23/microblogging-oli-orian-miah.git`.
+* Git clone `https://github.com/fac-23/microblogging-oli-orian-miah.git`
 * Run command `npm install` in terminal.
 * Start sever run command `npm run dev`.
 * Run cypress testing run command `npm run test`.
