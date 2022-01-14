@@ -26,7 +26,7 @@ Acceptance Criteria
 - [X] A responsive, mobile-first design
 - [X] Ensure your app is accessible to as many different users as possible
 
-###
+##
 What we learn't
 * TDD with cypress.
 * How to set up an express server.
@@ -37,7 +37,7 @@ What we learn't
 * Adding a 'catch all' for missing routes to generate a custom 404 page.
 * Use of github project board. 
 
-###
+##
 Future improvements 
 * Project modularisation.
 * A 'like button'.
