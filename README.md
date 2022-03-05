@@ -14,7 +14,7 @@ _[Deployed version here!](https://moo-net.herokuapp.com/)_
 - Miah: Quality Assurance
 
 ## How to install 🛠️
-- Git clone `https://github.com/fac-23/microblogging-oli-orian-miah.git`
+- Git clone `https://github.com/miahbates/microblog`
 - Run command `npm install` in terminal.
 - Start sever run command `npm run dev`.
 - Run cypress testing run command `npm run test`.
