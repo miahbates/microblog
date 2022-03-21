@@ -1,4 +1,4 @@
-# [Founders and Coders](https://www.foundersandcoders.com/) (appenticeship) 
+# [Founders and Coders](https://www.foundersandcoders.com/) (apprenticeship) 
 
 ## Moo-Net 🐮
 
