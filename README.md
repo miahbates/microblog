@@ -8,6 +8,8 @@ A microblogging website dedicated to cows, where you can add your latest cow upd
 
 _[Deployed version here!](https://moo-net.herokuapp.com/)_
 
+<img width="1405" alt="Screenshot 2022-06-25 at 21 16 46" src="https://user-images.githubusercontent.com/78933903/175789307-df84445d-bce4-4f4c-9141-f2112de45796.png">
+
 ## Team members
 - Oli: Scrum master/Facilitator/UX and UI
 - Orian: DevOps
